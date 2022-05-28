@@ -33,3 +33,7 @@ Simply create a `<div>` with the class `textbox`. In a textbox you can use:
 - images (`<img>`)
 
 you can give a blocktext the class ``secondary`` to make it... secondary.
+
+### markdown support
+
+If you want to use markdown, you just have to add the class `markdown` to a textbox.
