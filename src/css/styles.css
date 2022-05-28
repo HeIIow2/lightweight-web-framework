@@ -12,15 +12,19 @@
 	
 	--shadow-1dp: 0 0 10px black;
 	--shadow-2dp: 0 0 20px black;
+
+	--container-distance: 30px;
 }
 
 html body {
 	margin: 0;
 	padding: 0;
 	padding-top: 100px;
-	font-family: 'Roboto', sans-serif;
 	
 	background-color: var(--bg-color);
+	font-family: Sans-Serif, serif;
+
+	color: var(--main-text-color);
 }
 
 * {
@@ -99,9 +103,12 @@ header button:active {
 }
 
 .container {
+	margin-bottom: var(--container-distance);
+
 	max-width: 100%;
 	width: 80%;
-	margin: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 @media only screen and (max-width: 600px) {
