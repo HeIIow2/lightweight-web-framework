@@ -10,8 +10,8 @@ https://knowyourmeme.com/photos/2165975-pepe-the-frog
 */
 
 const src_list = [
-    "assets/popup/among-us.png",
-    "assets/popup/pepe-the-frog.png"
+    "https://ln.topdf.de/web_framework/assets/popup/among-us.png",
+    "https://ln.topdf.de/web_framework/assets/popup/pepe-the-frog.png"
 ];
 let temp_list = src_list.slice();
 temp_list.splice(1, 1);
