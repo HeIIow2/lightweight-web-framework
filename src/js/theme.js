@@ -9,11 +9,11 @@ const colors = {
     "--secondary-text-color": ["#aaa", "#333"],
 
     "--accent-color": ["#5b8c80", "#5b8c80"],
+    "--secondary-accent-color": ["#445e54", "#76aba1"],
     "--shadow-1dp": ["0 0 10px black", "0 0 0 2px var(--accent-color)"],
     "--shadow-2dp": ["0 0 20px black", "0 0 0 2px var(--accent-color)"],
     "--shadow-small": ["0 0 3px black", "0 0 0 1px var(--accent-color)"],
     "--negation": ["invert(1)", "None"],
-    "--secondary-accent-color": ["#97d9ca", "#4b6b65"],
 }
 const properties = Object.keys(colors);
 
