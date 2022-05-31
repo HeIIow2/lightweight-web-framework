@@ -1,5 +1,18 @@
-import {toggle} from "./theme.js";
-import {start_toggle} from "./popup.js";
+import {toggle} from "https://ln.topdf.de/web_framework/js/theme.js";
+import {start_toggle} from "https://ln.topdf.de/web_framework/js/popup.js";
+import {loadTOC} from "https://ln.topdf.de/web_framework/js/toc.js";
+
+// load the table of contents
+const toc = `
+<div id="toc">
+    <h1>Content</h1>
+    <ul id="toc_list">
+
+    </ul>
+</div>
+`
+document.body.innerHTML = toc + document.body.innerHTML;
+
 
 document.addEventListener ("DOMContentLoaded", () => {
 	// markdown support
@@ -17,5 +30,16 @@ document.addEventListener ("DOMContentLoaded", () => {
 
 	// popup
 	start_toggle();
+
+	loadTOC();
 });
+
+/*
+<div id="toc">
+    <h1>Content</h1>
+    <ul id="toc_list">
+
+    </ul>
+</div>
+ */
 

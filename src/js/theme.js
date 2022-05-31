@@ -1,3 +1,6 @@
+import {setCookie, getCookie} from 'https://ln.topdf.de/web_framework/js/cookies.js';
+
+
 const colors = {
     "--bg-color": ["#121212", "#fff"],
     "--bg-1dp": ["#1e1e1e", "#f2f2f2"],
@@ -15,6 +18,7 @@ const colors = {
     "--shadow-small": ["0 0 3px black", "0 0 0 1px var(--accent-color)"],
     "--negation": ["invert(1)", "None"],
 }
+
 const properties = Object.keys(colors);
 
 function set_theme(theme_) {
@@ -23,8 +27,6 @@ function set_theme(theme_) {
         document.documentElement.style.setProperty(propertie, colors[propertie][theme_]);
     }
 }
-
-import {setCookie, getCookie} from './cookies.js';
 
 let theme;
 

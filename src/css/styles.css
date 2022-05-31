@@ -36,6 +36,10 @@ html body {
 	box-sizing: border-box;
 }
 
+a {
+	color: var(--accent-color);
+}
+
 header {
 	z-index: 100;
 	position: fixed;
@@ -116,17 +120,23 @@ header a:active {
 }
 
 .container {
+	position: sticky;
 	margin-bottom: var(--container-distance);
 
 	max-width: 100%;
-	width: 80%;
+	width: calc(80% - var(--container-distance));
 	margin-left: auto;
-	margin-right: auto;
+	margin-right: 0;
 }
 
 @media only screen and (max-width: 800px) {
 	.container {
+		margin-right: auto;
 		width: 85%;
+	}
+
+	#toc {
+		display: none;
 	}
 
 	.third {
@@ -206,10 +216,6 @@ header a:active {
 }
 .textbox ol {
 	color: var(--main-text-color);
-}
-
-.textbox a {
-	color: var(--accent-color);
 }
 
 .textbox .elevated {
@@ -330,4 +336,39 @@ header a:active {
 
 .hide {
 	transform: translateY(100px);
+}
+
+#toc {
+	position: fixed;
+
+	background-color: var(--bg-2dp);
+	box-shadow: var(--shadow-2dp);
+	width: 20%;
+	padding: 10px;
+
+	height: 100%;
+}
+#toc h1 {
+	width: auto;
+}
+
+#toc ul {
+	width: auto;
+
+	padding-left: 18%;
+}
+
+#toc li {
+	list-style-type: none;
+
+	padding: 0 0 2px;
+	margin: 0;
+}
+
+#toc_list {
+	padding-left: 0 !important;
+}
+
+#toc_list li {
+	padding-bottom: 10px !important;
 }
