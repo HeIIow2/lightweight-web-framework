@@ -19,6 +19,8 @@
 
 	--shadow-small: 0 0 3px black;
 	--negation: invert(1);
+
+	--header-padding: 10px
 }
 
 html body {
@@ -32,9 +34,8 @@ html body {
 	color: var(--main-text-color);
 }
 
-* {
-	box-sizing: border-box;
-}
+* {box-sizing: border-box;}
+*:target{ padding-top: 120px;margin-top: -120px}
 
 a {
 	color: var(--accent-color);
@@ -46,30 +47,84 @@ header {
 	left: 0;
 	right: 0;
 	top: 0;
-	height: 60px;
 	
 	background-color: var(--bg-1dp);
 	box-shadow: var(--shadow-2dp);
-	
-	display: flex;
+
 	align-items: center;
 	justify-content: center;
 	
 	transition-property: transform;
 	transition-duration: 0.2s;
+
+	height: 60px;
 }
 
-header .push {
-	margin-left: auto;
+header a, header h1, header button, #dropdown > p {
+	display: block;
+
+	margin-top: var(--header-padding);
+	margin-bottom: var(--header-padding);
+
+	width: auto;
+	height: calc(100% - 2 * var(--header-padding));
+	font-size: 100%;
+
+	text-align: center;
+	padding: 10px;
+
+
+	background-color: var(--bg-2dp);
+	color: var(--main-text-color);
+	border: 2px solid var(--accent-color);
+
+	cursor: pointer;
+	transition-property: background-color, color, border;
+	transition-duration: 0.01s;
+
+	overflow: visible;
+}
+header a:hover, header h1:hover, header button:hover, header div.icon:hover {
+	background-color: var(--bg-1dp);
 }
 
+header > a, header > h1, header > button {
+	margin-left: var(--header-padding);
+	float: left;
+}
+
+#dropdown {
+	height: 100%;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+#dropdown p {
+	margin-right: var(--header-padding);
+	float: right;
+	display: none;
+}
+#dropdown a, #dropdown button {
+	margin-right: var(--header-padding);
+	display: block;
+	float: right;
+
+	width: auto;
+}
+
+/*
 header h1 {
 	margin-left: 10px;
 	margin-right: 20px;
 	color: var(--accent-color);
 }
 
-header a {
+header h1 a:hover {color: var(--secondary-accent-color)}
+header h1 a:active {transform: translateY(3px)}
+
+header > a {
 	margin-left: 10px;
 	height: 80%;
 	font-size: 100%;
@@ -118,6 +173,7 @@ header a:hover {
 header a:active {
 	transform: translateY(3px);
 }
+*/
 
 .container {
 	position: sticky;
@@ -150,7 +206,29 @@ header a:active {
 	}
 }
 
+/* Handys */
 @media only screen and (max-width: 600px) {
+	#dropdown {
+		flex-direction: column;
+		align-items: flex-end;
+		height: auto;
+
+		transition: all 0.2s;
+		transition-delay: 300ms;
+	}
+
+	#dropdown p {
+		display: block;
+	}
+	#dropdown a, #dropdown button {
+		display: none;
+	}
+
+	#dropdown:hover a, #dropdown:active a, #dropdown:focus a, #dropdown:hover button, #dropdown:active button {
+		margin-top: 0;
+		display: block !important;
+	}
+
 	.container {
 		width: 100%;
 	}
