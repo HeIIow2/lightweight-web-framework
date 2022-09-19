@@ -34,6 +34,7 @@ Simply create a `div` with the class `textbox`. In a textbox you can use:
 - blocktexts (`p`)
 - images (`img`)
 - lists (`ol`, `ul`)
+- inputs
 
 you can give a blocktext the class ``secondary`` to make it secondary and `elevated` to make it elevated.
 

@@ -20,7 +20,8 @@
 	--shadow-small: 0 0 3px black;
 	--negation: invert(1);
 
-	--header-padding: 10px
+	--header-padding: 10px;
+	--border-width: 1px;
 }
 
 html body {
@@ -449,4 +450,29 @@ header a:active {
 
 #toc_list li {
 	padding-bottom: 10px !important;
+}
+
+.textbox form {
+	display: flex;
+	flex-direction: row;
+}
+
+.textbox form * {
+	border-style: solid;
+	border-width: var(--border-width) !important;
+	border-color: var(--accent-color);
+	background: var(--bg-3dp);
+	color: var(--main-text-color);
+	box-shadow: none;
+	outline: none;
+	flex-grow: 2;
+}
+
+.textbox form *:focus {
+	box-shadow: 0 0 var(--border-width) var(--border-width) var(--accent-color);
+}
+
+
+.textbox form .grow {
+	flex-grow: 4;
 }
